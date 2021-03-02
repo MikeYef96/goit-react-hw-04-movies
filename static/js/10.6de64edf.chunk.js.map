@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/notification/Notification.js"],"names":["Notification"],"mappings":"2IAAA,iBAMeA,UAJf","file":"static/js/10.6de64edf.chunk.js","sourcesContent":["import React from 'react';\n\nfunction Notification() {\n  <h2>Sorry, nothing to show! Let's check another request</h2>;\n}\n\nexport default Notification;\n"],"sourceRoot":""}
