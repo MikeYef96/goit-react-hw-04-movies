@@ -1,60 +1,57 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://api.themoviedb.org';
-// eslint-disable-next-line import/no-anonymous-default-export
-export default {
+const KEY = 'a3f1bffb5eca2c1e671aa27884e4851b';
+axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
+
+const api = {
   async getTrendingMovies() {
     try {
       const movies = await axios
-        .get(`/3/trending/movie/day?api_key=${process.env.REACT_APP_KEY}`)
+        .get(`trending/movie/day?api_key=${KEY}`)
         .then(movies => movies.data.results);
       return movies;
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
     }
   },
 
   async getMoviesBySearch(query) {
     try {
       const movie = await axios.get(
-        `/3/search/movie?api_key=${process.env.REACT_APP_KEY}&query=${query}&page=1&include_adult=true`,
+        `search/movie?api_key=${KEY}&query=${query}&page=1&include_adult=false`,
       );
       return movie;
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
     }
   },
 
   async getMovieDetails(id) {
     try {
-      const details = await axios.get(
-        `/3/movie/${id}/credits?api_key=${process.env.REACT_APP_KEY}`,
-      );
+      const details = await axios.get(`movie/${id}?api_key=${KEY}`);
       return details;
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
     }
   },
-
   async getActorsFromMovie(id = 12) {
     try {
       const actors = await axios
-        .get(`/3/movie/${id}/credits?api_key=${process.env.REACT_APP_KEY}`)
+        .get(`movie/${id}/credits?api_key=${KEY}`)
         .then(actors => actors.data.cast);
       return actors;
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
     }
   },
-
   async getReviewsOfMovie(id = 12) {
     try {
-      const reviews = await axios.get(
-        `/3/movie/${id}/reviews?api_key=${process.env.REACT_APP_KEY}`,
-      );
+      const reviews = await axios.get(`movie/${id}/reviews?api_key=${KEY}`);
       return reviews;
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
     }
   },
 };
+
+export default api;

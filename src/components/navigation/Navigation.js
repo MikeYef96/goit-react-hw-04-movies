@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import css from '../../App.module.css';
+import globalCss from '../../index.module.css';
 
 const useStyles = makeStyles({
   root: {
@@ -27,10 +27,10 @@ const useStyles = makeStyles({
   },
 });
 
-function Navigation() {
+export default function Navigation() {
   const classes = useStyles();
   return (
-    <nav className={css.container}>
+    <nav className={globalCss.conteiner}>
       <Paper className={classes.root} elevation={3}>
         <ul>
           <li>
@@ -39,7 +39,7 @@ function Navigation() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/movies" exact activeClassName={classes.activeLink}>
+            <NavLink to="/movies" activeClassName={classes.activeLink}>
               movies
             </NavLink>
           </li>
@@ -48,5 +48,3 @@ function Navigation() {
     </nav>
   );
 }
-
-export default Navigation;

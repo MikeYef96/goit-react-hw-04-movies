@@ -1,14 +1,24 @@
 import React, { Component, lazy, Suspense } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Navigation from './components/navigation/Navigation';
 import Spinner from './components/spinner/Spinner';
-import css from './App.module.css';
+import css from './index.module.css';
 
-const Home = lazy(() => import('./views/main/Home'));
-const Movies = lazy(() => import('./views/movies/Movies'));
-const MovieDetails = lazy(() => import('./views/moviesDetails/MovieDetails'));
+const Home = lazy(() =>
+  import('./pages/maine/Home' /* webpackChunkName: "HomePage" */),
+);
+const Movies = lazy(() =>
+  import('./pages/movies/Movies' /* webpackChunkName: "MoviePage" */),
+);
+const MovieDetails = lazy(() =>
+  import(
+    './pages/movieDetails/MovieDetails' /* webpackChunkName: "MovieDetailsPage" */
+  ),
+);
 const Notification = lazy(() =>
-  import('./components/notification/Notification'),
+  import(
+    './components/notification/Notification' /* webpackChunkName: "NotFoundPage" */
+  ),
 );
 
 class App extends Component {
@@ -16,7 +26,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className={css.container}>
+      <div className={css.conteiner}>
         <Navigation />
         <Suspense fallback={<Spinner />}>
           <Switch>

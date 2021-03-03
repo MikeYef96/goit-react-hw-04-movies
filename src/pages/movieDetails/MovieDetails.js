@@ -5,11 +5,15 @@ import Spinner from '../../components/spinner/Spinner';
 import { Paper } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import globalСss from '../../App.module.css';
+import globalcss from '../../index.module.css';
 import css from './MovieDetails.module.css';
 
-const Cast = lazy(() => import('./cast/Cast'));
-const Reviews = lazy(() => import('./reviews/Reviews'));
+const Cast = lazy(() =>
+  import('./cast/Cast' /* webpackChunkName: "CastPage" */),
+);
+const Reviews = lazy(() =>
+  import('./reviews/Reviews' /* webpackChunkName: "ReviewsPage" */),
+);
 
 const getMovieId = props => props.match.params.movieId;
 
@@ -54,7 +58,6 @@ class MovieDetails extends Component {
   render() {
     const { movie, reviews, actors } = this.state;
     const ganres = movie.genres;
-    console.warn(this.state);
 
     return (
       <Paper elevation={3} className={css.wrap}>
@@ -70,7 +73,7 @@ class MovieDetails extends Component {
             >
               &#8592; Go back
             </Button>
-            <div className={globalСss.container}>
+            <div className={globalcss.conteiner}>
               <div className={css.wrapItemDetails}>
                 <img
                   src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}

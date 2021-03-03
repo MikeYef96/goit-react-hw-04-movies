@@ -1,7 +1,11 @@
 import React from 'react';
 
 function Notification() {
-  <h2>Sorry, nothing to show! Let's check another request</h2>;
+  return (
+    <h2>
+      Your request is not found! Let's try again and choose something from menu!
+    </h2>
+  );
 }
 
 export default Notification;

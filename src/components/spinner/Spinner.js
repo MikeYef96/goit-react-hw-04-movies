@@ -6,10 +6,10 @@ const Spinner = () => (
   <Loader
     className={css.Loader}
     type="ThreeDots"
-    color="#3f52b5"
+    color="#3f51b5"
     height={150}
     width={150}
-    timeout={180000}
+    timeout={123000}
   />
 );
 

@@ -23,6 +23,7 @@ const useStyles = makeStyles({
 
 export default function MoviesItem({ movies, match, location }) {
   const classes = useStyles();
+  console.log(movies);
 
   return (
     <div>

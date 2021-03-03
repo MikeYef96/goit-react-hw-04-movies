@@ -1,0 +1,39 @@
+.wrap {
+  margin-bottom: 20px;
+}
+
+.activeLink {
+  color: #3f51b5;
+  font-weight: bold;
+}
+
+.wrapItemDetails {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.containerForDetails {
+  margin: 10px;
+}
+
+.containerForAddInfo {
+  padding-bottom: 20px;
+  margin: 0 10px;
+}
+
+.titleAddInfo {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.addInfo {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media (min-width: 768px) {
+  .wrapItemDetails {
+    flex-wrap: nowrap;
+  }
+}
