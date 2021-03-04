@@ -17,22 +17,13 @@
     "uuid": "^8.3.2",
     "web-vitals": "^1.1.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MikeYef96/goit-react-hw-04-movies.git"
-  },
-  "author": "Mike Yef <mike.yef@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MikeYef96/goit-react-hw-04-movies"
-  },
-  "homepage": "https://mikeyef96.github.io/goit-react-hw-04-movies/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build"
+    "deploy": "netlify deploy -p",
+    "deploy-gh-pages": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
